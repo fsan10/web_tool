@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MOCK · 达播运营商品管理</title>
+<style>
+:root{--bg:#f5f7fa;--card:#fff;--line:#e7eaf0;--text:#172033;--muted:#667085;--blue:#2563eb;--green:#16a34a;--amber:#d97706;--red:#dc2626;--purple:#7c3aed;--nav:#111827}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+button,input,select{font:inherit}.app{min-height:100vh;display:grid;grid-template-columns:230px 1fr}.side{background:linear-gradient(180deg,#111827,#0f172a);color:#cbd5e1;padding:18px 12px;min-height:100vh}.brand{display:flex;align-items:center;gap:10px;padding:4px 8px 20px}.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#4f46e5,#2563eb);display:grid;place-items:center;color:#fff;font-weight:800}.brand b{color:#fff}.brand small{display:block;color:#7f8b9d;font-size:11px}.group{font-size:11px;color:#64748b;font-weight:700;padding:13px 10px 5px}.nav{display:block;width:100%;border:0;background:transparent;color:#aeb7c5;text-align:left;padding:10px 11px;border-radius:8px;margin:2px 0}.nav.active{background:rgba(59,130,246,.16);color:#fff;box-shadow:inset 3px 0 #60a5fa}.main{min-width:0}.top{height:64px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;z-index:20}.crumb{color:var(--muted)}.crumb b{color:var(--text)}.env{padding:5px 9px;border:1px solid var(--line);border-radius:999px;font-size:12px}.content{padding:20px 22px 32px}.head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.head h1{font-size:24px;margin:0}.head p{margin:4px 0 0;color:var(--muted)}.tabs{display:flex;gap:4px;background:#e9edf3;padding:4px;border-radius:10px;width:max-content;margin:16px 0}.tab{border:0;background:transparent;border-radius:7px;padding:8px 13px;color:#667085;font-weight:600}.tab.active{background:#fff;color:#1d4ed8;box-shadow:0 1px 3px #cbd5e1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.stat label{color:var(--muted);font-size:12px}.stat b{display:block;font-size:24px;margin-top:5px}.stat small{color:#98a2b3}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;margin-top:12px;overflow:hidden;box-shadow:0 6px 20px rgba(15,23,42,.04)}.toolbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px;border-bottom:1px solid var(--line)}.filters,.actions{display:flex;gap:7px;flex-wrap:wrap}.field{height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:0 9px;color:#475467}.field input,.field select{height:100%;border:0;outline:0;background:transparent}.search{width:220px}.btn{height:34px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:0 11px;font-weight:600;color:#475467}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.batchon{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}.batchbar{display:none;padding:10px 12px;background:#eff6ff;border-bottom:1px solid #bfdbfe;align-items:center;justify-content:space-between;gap:10px}.batchbar.show{display:flex}.batchbar select{height:32px;border:1px solid #bfdbfe;border-radius:7px;background:#fff}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:1050px}th{background:#f8fafc;color:#667085;font-size:12px;text-align:left;padding:10px 11px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:11px;border-bottom:1px solid #edf0f4;vertical-align:middle}.code{font-family:ui-monospace,monospace;background:#f6f8fa;border:1px solid #eaecf0;border-radius:6px;padding:3px 6px}.status,.scope{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;font-size:11px;font-weight:700}.status.mapped{background:#ecfdf3;color:#027a48}.status.unmapped{background:#fff7ed;color:#b54708}.status.conflict{background:#fef3f2;color:#b42318}.status.partial{background:#fffaeb;color:#b54708}.scope{border-radius:6px;background:#f2f4f7;color:#475467;margin-top:3px}.scope.shop{background:#eff8ff;color:#175cd3}.scope.platform{background:#f0fdf4;color:#15803d}.map{min-width:168px;height:32px;border:1px solid #d0d5dd;border-radius:7px;background:#fff}.muted{display:block;color:#98a2b3;font-size:11px}.link{border:0;background:transparent;color:var(--blue);font-weight:600}.money{text-align:right;font-variant-numeric:tabular-nums}.foot{padding:10px 12px;color:#667085;font-size:12px;display:flex;justify-content:space-between}.panelview{display:none}.panelview.active{display:block}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.product{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px}.product h3{margin:0 0 6px}.product p{margin:0;color:var(--muted)}.tree{padding:18px}.tree .l1{font-weight:700;margin:10px 0}.tree .l2{margin-left:20px;padding:9px 11px;border-left:2px solid #dbeafe;background:#f8fafc;border-radius:0 8px 8px 0;margin-bottom:6px}.rules{padding:0 12px 12px}.rule{display:grid;grid-template-columns:1.2fr 1fr 1fr .8fr .8fr;gap:10px;padding:11px 4px;border-bottom:1px solid #edf0f4}.modalbg{display:none;position:fixed;inset:0;background:rgba(15,23,42,.48);z-index:50;padding:20px;align-items:center;justify-content:center}.modalbg.show{display:flex}.modal{width:min(720px,100%);background:#fff;border-radius:14px;overflow:hidden}.modalhead,.modalfoot{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modalfoot{border-top:1px solid var(--line);border-bottom:0;justify-content:flex-end;gap:8px}.modalbody{padding:16px}.callout{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:9px;padding:11px;margin-bottom:12px}.shoprow{display:grid;grid-template-columns:1.2fr 1fr .8fr .7fr;gap:8px;padding:10px 0;border-bottom:1px solid #edf0f4}.toast{position:fixed;right:18px;bottom:18px;background:#111827;color:#fff;border-radius:10px;padding:11px 14px;opacity:0;transform:translateY(8px);transition:.2s;z-index:99}.toast.show{opacity:1;transform:none}.mobiletitle{display:none}
+@media(max-width:860px){
+.app{display:block}.side{display:none}.top{height:56px;padding:0 14px}.content{padding:14px}.crumb{display:none}.mobiletitle{display:block;font-weight:700}.head{display:block}.head h1{font-size:21px}.tabs{width:100%;overflow:auto}.tab{white-space:nowrap;flex:1}.stats{grid-template-columns:repeat(2,1fr)}.stat b{font-size:21px}.toolbar{display:block}.filters{display:grid;grid-template-columns:1fr 1fr}.field{width:100%}.field.search{grid-column:1/-1}.actions{margin-top:8px}.actions .btn{flex:1}.tablewrap{overflow:visible}table{min-width:0;display:block}thead{display:none}tbody{display:grid;gap:9px;padding:9px}tr{display:grid;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px;position:relative}td{display:grid;grid-template-columns:98px 1fr;border:0;padding:4px 0;text-align:left!important;gap:8px}td:before{content:attr(data-label);color:#98a2b3;font-size:12px}.selectcell{position:absolute;right:8px;top:8px;display:block;width:auto}.selectcell:before{display:none}.map{width:100%;min-width:0}.foot{display:block}.cards{grid-template-columns:1fr}.rule{grid-template-columns:1fr}.shoprow{grid-template-columns:1fr}.modalbg{padding:10px}.modalbody{max-height:70vh;overflow:auto}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">M</div><div><b>MOCK COFFICE</b><small>经营配置中心</small></div></div>
+  <div class="group">达播运营</div>
+  <button class="nav">达人商务归属</button><button class="nav">商务月度目标</button><button class="nav active">商品管理</button>
+  <div class="group">平台费用</div><button class="nav">一级分类管理</button><button class="nav">费用映射</button><button class="nav">原始费用</button>
+</aside>
+<main class="main">
+<header class="top"><div class="crumb">达播运营 / <b>商品管理</b></div><div class="mobiletitle">商品管理</div><span class="env">● 数据已同步</span></header>
+<div class="content">
+  <div class="head"><div><h1>商品管理</h1><p>统一处理平台原始商品编码、公司商品归属、分类和映射规则。</p></div></div>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="mapping">编码映射</button>
+    <button class="tab" data-tab="products">公司商品</button>
+    <button class="tab" data-tab="categories">分类管理</button>
+    <button class="tab" data-tab="rules">映射规则</button>
+  </div>
+
+  <section class="panelview active" id="mapping">
+    <div class="stats">
+      <div class="stat"><label>待映射编码</label><b id="s-unmapped">3</b><small>建议优先处理</small></div>
+      <div class="stat"><label>冲突 / 部分映射</label><b id="s-conflict">2</b><small>需要检查店铺规则</small></div>
+      <div class="stat"><label>已映射编码</label><b id="s-mapped">5</b><small>当前筛选范围</small></div>
+      <div class="stat"><label>待处理 GMV</label><b>¥54,220</b><small>近 30 天观测</small></div>
+    </div>
+    <div class="panel">
+      <div class="toolbar">
+        <div class="filters">
+          <div class="field"><select id="pf"><option value="">全部平台</option><option>抖音</option><option>天猫</option><option>视频号</option><option>京东</option><option>小红书</option><option>快手</option></select></div>
+          <div class="field"><select id="sf"><option value="">全部状态</option><option value="unmapped">待映射</option><option value="conflict">映射冲突</option><option value="partial">部分映射</option><option value="mapped">已映射</option></select></div>
+          <div class="field search"><input id="q" placeholder="搜索原始编码 / 公司商品 / 店铺"></div>
+        </div>
+        <div class="actions"><button class="btn" id="batchBtn" onclick="toggleBatch()">开启批量勾选</button><button class="btn primary" onclick="filterRows()">查询</button></div>
+      </div>
+      <div class="batchbar" id="batchbar"><span>已选择 <b id="selcount">0</b> 条</span><div><select id="batchProduct"><option value="">选择公司商品</option><option>奶香山药盒装</option><option>茉莉奶绿盒装</option><option>蜜瓜牛乳盒装</option><option>红豆薏米盒装</option></select> <button class="btn primary" onclick="batchMap()">批量映射</button></div></div>
+      <div class="tablewrap"><table><thead><tr><th></th><th>平台</th><th>店铺 / 作用域</th><th>原始商品编码</th><th>公司商品</th><th>二级分类</th><th>状态</th><th>近30天 GMV</th><th>最后出现</th><th>操作</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="foot"><span id="summary"></span><span>映射优先级：店铺级 ＞ 平台默认 ＞ 历史兼容</span></div>
+    </div>
+  </section>
+
+  <section class="panelview" id="products">
+    <div class="cards">
+      <div class="product"><h3>奶香山药盒装</h3><p>一级分类：冲调饮品 · 二级分类：奶香山药</p><p style="margin-top:10px"><b>28</b> 个平台编码 · <a href="#" onclick="jumpProduct('奶香山药盒装')">查看映射</a></p></div>
+      <div class="product"><h3>茉莉奶绿盒装</h3><p>一级分类：冲调饮品 · 二级分类：茉莉奶绿</p><p style="margin-top:10px"><b>17</b> 个平台编码 · <a href="#" onclick="jumpProduct('茉莉奶绿盒装')">查看映射</a></p></div>
+      <div class="product"><h3>蜜瓜牛乳盒装</h3><p>一级分类：冲调饮品 · 二级分类：蜜瓜牛乳</p><p style="margin-top:10px"><b>14</b> 个平台编码 · <a href="#" onclick="jumpProduct('蜜瓜牛乳盒装')">查看映射</a></p></div>
+    </div>
+  </section>
+
+  <section class="panelview" id="categories"><div class="panel tree">
+    <div class="l1">冲调饮品</div><div class="l2">奶香山药 <span class="muted">关联公司商品 2 个</span></div><div class="l2">茉莉奶绿 <span class="muted">关联公司商品 1 个</span></div><div class="l2">蜜瓜牛乳 <span class="muted">关联公司商品 1 个</span></div>
+    <div class="l1">谷物营养</div><div class="l2">红豆薏米 <span class="muted">关联公司商品 1 个</span></div><div class="l2">黑芝麻 <span class="muted">关联公司商品 2 个</span></div>
+  </div></section>
+
+  <section class="panelview" id="rules"><div class="panel rules">
+    <div class="rule"><b>抖音 / MOCK饮品旗舰店</b><span class="code">M-NXSY-2</span><span>奶香山药盒装</span><span class="scope shop">店铺级</span><span class="status mapped">启用</span></div>
+    <div class="rule"><b>抖音 / 全部店铺</b><span class="code">M-NXSY-2</span><span>奶香山药盒装</span><span class="scope platform">平台默认</span><span class="status mapped">启用</span></div>
+    <div class="rule"><b>* / 历史兼容</b><span class="code">NX-SY-*</span><span>奶香山药盒装</span><span class="scope">suffix_quantity</span><span class="status partial">历史</span></div>
+  </div></section>
+</div>
+</main>
+</div>
+
+<div class="modalbg" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal"><div class="modalhead"><div><b>M-NXSY-2 · 映射冲突详情</b><span class="muted">抖音 · 同一编码在不同店铺命中不同商品</span></div><button class="btn" onclick="closeModal()">关闭</button></div>
+<div class="modalbody"><div class="callout"><b>为什么会冲突？</b><br>店铺级规则优先于平台默认规则，所以只修改平台默认规则不会覆盖已经存在的店铺级映射。</div>
+<div class="shoprow"><b>MOCK饮品旗舰店</b><span>奶香山药盒装</span><span class="scope shop">店铺级</span><span class="status mapped">正常</span></div>
+<div class="shoprow"><b>MOCK食品专营店</b><span>奶香山药盒装</span><span class="scope platform">平台默认</span><span class="status mapped">正常</span></div>
+<div class="shoprow"><b>MOCK甄选店</b><span style="color:#b42318">奶香山药小袋</span><span class="scope shop">店铺级</span><span class="status conflict">冲突</span></div></div>
+<div class="modalfoot"><button class="btn" onclick="toast('仅处理异常店铺')">仅处理异常店铺</button><button class="btn primary" onclick="unify()">统一映射全部店铺</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var data=[
+{id:1,p:'抖音',shop:'MOCK饮品旗舰店',scope:'店铺级',code:'M-NXSY-2',product:'奶香山药盒装',cat:'奶香山药',st:'mapped',gmv:28640,last:'2026-09-18'},
+{id:2,p:'抖音',shop:'3 家店铺',scope:'混合规则',code:'M-NXSY-2',product:'多个归属',cat:'—',st:'conflict',gmv:18620,last:'2026-09-18',detail:1},
+{id:3,p:'抖音',shop:'MOCK食品专营店',scope:'待配置',code:'M-MGNT-2',product:'',cat:'—',st:'unmapped',gmv:13240,last:'2026-09-18'},
+{id:4,p:'天猫',shop:'MOCK饮品旗舰店',scope:'平台默认',code:'NX-LATTE-BOX-1',product:'茉莉奶绿盒装',cat:'茉莉奶绿',st:'mapped',gmv:48720,last:'2026-09-18'},
+{id:5,p:'视频号',shop:'MOCK甄选店',scope:'待配置',code:'MGNT_BOX_2',product:'',cat:'—',st:'unmapped',gmv:9760,last:'2026-09-17'},
+{id:6,p:'京东',shop:'MOCK饮品旗舰店',scope:'平台默认',code:'JD-89018722',product:'红豆薏米盒装',cat:'红豆薏米',st:'mapped',gmv:15880,last:'2026-09-18'},
+{id:7,p:'小红书',shop:'2 家店铺',scope:'部分覆盖',code:'XHS-NXSY-1',product:'奶香山药盒装',cat:'奶香山药',st:'partial',gmv:8320,last:'2026-09-16',detail:1},
+{id:8,p:'快手',shop:'MOCK食品专营店',scope:'待配置',code:'KS-HZM-TRY-1',product:'',cat:'—',st:'unmapped',gmv:4280,last:'2026-09-15'}
+];
+var cats={'奶香山药盒装':'奶香山药','茉莉奶绿盒装':'茉莉奶绿','蜜瓜牛乳盒装':'蜜瓜牛乳','红豆薏米盒装':'红豆薏米'};
+var selected=new Set(),batch=false,view=data.slice();
+function m(n){return '¥'+n.toLocaleString('zh-CN')}
+function st(s){return {mapped:'已映射',unmapped:'待映射',conflict:'映射冲突',partial:'部分映射'}[s]}
+function opts(r){var a=['','奶香山药盒装','茉莉奶绿盒装','蜜瓜牛乳盒装','红豆薏米盒装'];return '<select class="map" onchange="mapOne('+r.id+',this.value)">'+a.map(function(x){return '<option '+(x===r.product?'selected':'')+' value="'+x+'">'+(x||'选择公司商品')+'</option>'}).join('')+'</select>'}
+function render(){var h='';view.forEach(function(r){h+='<tr><td class="selectcell" data-label=""><input type="checkbox" '+(selected.has(r.id)?'checked':'')+' onchange="pick('+r.id+',this.checked)" '+(!batch?'style="visibility:hidden"':'')+'></td><td data-label="平台"><b>'+r.p+'</b></td><td data-label="店铺 / 作用域">'+r.shop+'<span class="muted"><span class="scope '+(r.scope.indexOf("店铺")>=0?'shop':r.scope.indexOf("平台")>=0?'platform':'')+'">'+r.scope+'</span></span></td><td data-label="原始编码"><span class="code">'+r.code+'</span></td><td data-label="公司商品">'+(r.st==='conflict'?'<b style="color:#b42318">'+r.product+'</b>':opts(r))+'</td><td data-label="二级分类">'+r.cat+'</td><td data-label="状态"><span class="status '+r.st+'">'+st(r.st)+'</span></td><td data-label="近30天 GMV" class="money"><b>'+m(r.gmv)+'</b></td><td data-label="最后出现">'+r.last+'</td><td data-label="操作"><button class="link" onclick="'+(r.detail?'openModal()':'toast(\\'已显示生效规则\\')')+'">'+(r.detail?'查看详情':'查看规则')+'</button></td></tr>'});document.getElementById('rows').innerHTML=h;document.getElementById('summary').textContent='共 '+view.length+' 条 · 待映射 '+view.filter(x=>x.st==='unmapped').length+' 条 · 冲突/部分 '+view.filter(x=>x.st==='conflict'||x.st==='partial').length+' 条';document.getElementById('s-unmapped').textContent=view.filter(x=>x.st==='unmapped').length;document.getElementById('s-conflict').textContent=view.filter(x=>x.st==='conflict'||x.st==='partial').length;document.getElementById('s-mapped').textContent=view.filter(x=>x.st==='mapped').length}
+function mapOne(id,v){var r=data.find(x=>x.id===id);r.product=v;r.cat=cats[v]||'—';r.st=v?'mapped':'unmapped';render();toast(v?'映射已保存':'映射已清除')}
+function filterRows(){var p=document.getElementById('pf').value,s=document.getElementById('sf').value,q=document.getElementById('q').value.toLowerCase();view=data.filter(function(r){return(!p||r.p===p)&&(!s||r.st===s)&&(!q||(r.code+' '+r.product+' '+r.shop).toLowerCase().indexOf(q)>=0)});selected.clear();render()}
+function toggleBatch(){batch=!batch;document.getElementById('batchbar').classList.toggle('show',batch);document.getElementById('batchBtn').classList.toggle('batchon',batch);document.getElementById('batchBtn').textContent=batch?'关闭批量勾选':'开启批量勾选';selected.clear();document.getElementById('selcount').textContent=0;render()}
+function pick(id,on){on?selected.add(id):selected.delete(id);document.getElementById('selcount').textContent=selected.size}
+function batchMap(){var p=document.getElementById('batchProduct').value;if(!p||!selected.size){toast('请先选择编码和公司商品');return}selected.forEach(function(id){var r=data.find(x=>x.id===id);if(r&&r.st!=='conflict'){r.product=p;r.cat=cats[p]||'—';r.st='mapped'}});selected.clear();render();toast('批量映射完成')}
+function openModal(){document.getElementById('modal').classList.add('show')}function closeModal(){document.getElementById('modal').classList.remove('show')}
+function unify(){var r=data.find(x=>x.id===2);r.product='奶香山药盒装';r.cat='奶香山药';r.st='mapped';r.scope='统一规则';closeModal();render();toast('已统一全部店铺')}
+function toast(t){var e=document.getElementById('toast');e.textContent=t;e.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>e.classList.remove('show'),2200)}
+function jumpProduct(n){document.querySelector('[data-tab="mapping"]').click();document.getElementById('q').value=n;filterRows()}
+document.getElementById('tabs').onclick=function(e){var b=e.target.closest('[data-tab]');if(!b)return;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panelview').forEach(x=>x.classList.remove('active'));document.getElementById(b.dataset.tab).classList.add('active')}
+render();
+</script>
+</body></html>
